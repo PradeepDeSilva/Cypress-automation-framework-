@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-12T21:22:26.898Z",
+    "end": "2024-05-12T21:22:43.606Z",
+    "duration": 16708,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "568cfecd-ce11-4b1e-a928-a2eb18d0a059",
+      "title": "",
+      "fullFile": "cypress/e2e/TestSuite.cy.js",
+      "file": "cypress/e2e/TestSuite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "af3d8911-8a7b-4919-ae5a-7d59fa91d24f",
+          "title": "Calculate Holiday Entitlement",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test001 - Calculate Holiday Entitlement for a full leave year",
+              "fullTitle": "Calculate Holiday Entitlement Test001 - Calculate Holiday Entitlement for a full leave year",
+              "timedOut": null,
+              "duration": 3555,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wrap(null).then(() => {\n  // Select irregular hours as \"No\"\n  _SelectIrregularHoursPage.default.selectRegularHours();\n  _SelectIrregularHoursPage.default.submit();\n  _HolidayEntitlementBasedOnPage.default.assertHolidayEntitlementBasedOnPage();\n  // Select 'days work per week'\n  _HolidayEntitlementBasedOnPage.default.selectDaysWorkPerWeek();\n  _HolidayEntitlementBasedOnPage.default.submit();\n  _SelectFullOrPartOfYearForCalculationPage.default.assertSelectFullOrPartOfYearForCalculationPage();\n  // Select the option 'for a full leave year'\n  _SelectFullOrPartOfYearForCalculationPage.default.selectForAFullLeaveYear();\n  _SelectFullOrPartOfYearForCalculationPage.default.submit();\n  _NumberOfDaysWorkedPerWeekPage.default.assertNumberOfDaysWorkedPerWeekPage();\n  // Enter number of days worked per week\n  _NumberOfDaysWorkedPerWeekPage.default.enterDaysWorkedPerWeek(Data.Test001NumberOfDaysWorkedPerWeek);\n  _NumberOfDaysWorkedPerWeekPage.default.submit();\n  _HolidayEntitlementResultsPage.default.assertHolidayEntitlementResultsPage();\n  //Assertion: Check if the page shows the expected holiday entitlement after continuing\n  _HolidayEntitlementResultsPage.default.assertExpactedHolidayEntitlement(Data.Test001ExpactedHolidays);\n});",
+              "err": {},
+              "uuid": "5fc97fd8-2741-43f1-b7f5-f660000719d9",
+              "parentUUID": "af3d8911-8a7b-4919-ae5a-7d59fa91d24f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test002 - Calculate Holiday Entitlement for someone starting part way through a leave year",
+              "fullTitle": "Calculate Holiday Entitlement Test002 - Calculate Holiday Entitlement for someone starting part way through a leave year",
+              "timedOut": null,
+              "duration": 3472,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wrap(null).then(() => {\n  // Select irregular hours as \"Yes\"\n  _SelectIrregularHoursPage.default.selectIrregularHours();\n  _SelectIrregularHoursPage.default.submit();\n  _LeaveYearStartPage.default.assertLeaveYearStartPage();\n  //Enter leave year start date and click on 'Continue'\n  _LeaveYearStartPage.default.enterleaveYearStartDay(Data.Test002LeaveYearStartDay);\n  _LeaveYearStartPage.default.enterleaveYearStartMonth(Data.Test002LeaveYearStartMonth);\n  _LeaveYearStartPage.default.enterleaveYearStartYear(Data.Test002LeaveYearStartYear);\n  _LeaveYearStartPage.default.submit();\n  _HolidayEntitlementBasedOnPage.default.assertHolidayEntitlementBasedOnPage();\n  // Select 'days work per week'\n  _HolidayEntitlementBasedOnPage.default.selectDaysWorkPerWeek();\n  _HolidayEntitlementBasedOnPage.default.submit();\n  _SelectFullOrPartOfYearForCalculationPage.default.assertSelectFullOrPartOfYearForCalculationPage();\n  // Select the option 'for someone starting part way through a leave year'\n  _SelectFullOrPartOfYearForCalculationPage.default.selectStartingPartWayThrough();\n  _SelectFullOrPartOfYearForCalculationPage.default.submit();\n  _EmploymentStartDatePage.default.assertEmploymentStartDatePage();\n  //Enter emplyment year start date and click on 'Continue'\n  _EmploymentStartDatePage.default.enterEmploymentStartDay(Data.Test002EymplomentYearStartDay);\n  _EmploymentStartDatePage.default.enterEmploymentStartMonth(Data.Test002EmploymentYearStartMonth);\n  _EmploymentStartDatePage.default.enterEmploymentStartYear(Data.Test002EmploymentYearStartYear);\n  _EmploymentStartDatePage.default.submit();\n  _NumberOfDaysWorkedPerWeekPage.default.assertNumberOfDaysWorkedPerWeekPage();\n  // Enter number of days worked per week\n  _NumberOfDaysWorkedPerWeekPage.default.enterDaysWorkedPerWeek(Data.Test002NumberOfDaysWorkedPerWeek);\n  _NumberOfDaysWorkedPerWeekPage.default.submit();\n  _HolidayEntitlementResultsPage.default.assertHolidayEntitlementResultsPage();\n  //Assertion: Check if the page shows the expected holiday entitlement after continuing\n  _HolidayEntitlementResultsPage.default.assertExpactedHolidayEntitlement(Data.Test002ExpactedHolidays);\n});",
+              "err": {},
+              "uuid": "ec36a92d-f43e-4e6c-908b-1d0cba1efe3a",
+              "parentUUID": "af3d8911-8a7b-4919-ae5a-7d59fa91d24f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test003 - Calculate Holiday Entitlement for someone leaving part way through a leave year",
+              "fullTitle": "Calculate Holiday Entitlement Test003 - Calculate Holiday Entitlement for someone leaving part way through a leave year",
+              "timedOut": null,
+              "duration": 3521,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wrap(null).then(() => {\n  // Select irregular hours as \"No\"\n  _SelectIrregularHoursPage.default.selectRegularHours();\n  _SelectIrregularHoursPage.default.submit();\n  _HolidayEntitlementBasedOnPage.default.assertHolidayEntitlementBasedOnPage();\n  // Select '\thours worked per week'\n  _HolidayEntitlementBasedOnPage.default.selectHoursWorkedPerWeek();\n  _HolidayEntitlementBasedOnPage.default.submit();\n  _SelectFullOrPartOfYearForCalculationPage.default.assertSelectFullOrPartOfYearForCalculationPage();\n  // Select the option 'for someone leaving part way through a leave year'\n  _SelectFullOrPartOfYearForCalculationPage.default.selectLeavingPartWayThrough();\n  _SelectFullOrPartOfYearForCalculationPage.default.submit();\n  _EmploymentEndDatePage.default.assertEmploymentEndDatePage();\n  // Enter emplyment end date and click on 'Continue'\n  _EmploymentEndDatePage.default.enterEmploymentEndDay(Data.Test003EymplomentEndDay);\n  _EmploymentEndDatePage.default.enterEmploymentEndMonth(Data.Test003EmploymentEndMonth);\n  _EmploymentEndDatePage.default.enterEmploymentEndYear(Data.Test003EmploymentEndYear);\n  _EmploymentEndDatePage.default.submit();\n  _LeaveYearStartPage.default.assertLeaveYearStartPage();\n  //Enter leave year start date and click on 'Continue'\n  _LeaveYearStartPage.default.enterleaveYearStartDay(Data.Test003LeaveYearStartDay);\n  _LeaveYearStartPage.default.enterleaveYearStartMonth(Data.Test003LeaveYearStartMonth);\n  _LeaveYearStartPage.default.enterleaveYearStartYear(Data.Test003LeaveYearStartYear);\n  _LeaveYearStartPage.default.submit();\n  _NumberOfHoursWorkedPerWeekPage.default.assertNumberOfHoursWorkedPerWeekPage();\n  //Enter Number of hours worked per week\n  _NumberOfHoursWorkedPerWeekPage.default.enterHoursWorkedPerWeek(Data.Test003NumberOfHoursWorkedPerWeek);\n  _NumberOfHoursWorkedPerWeekPage.default.submit();\n  _NumberOfDaysWorkedPerWeekPage.default.assertNumberOfDaysWorkedPerWeekPage();\n  // Enter number of days worked per week\n  _NumberOfDaysWorkedPerWeekPage.default.enterDaysWorkedPerWeek(Data.Test003NumberOfDaysWorkedPerWeek);\n  _NumberOfDaysWorkedPerWeekPage.default.submit();\n  _HolidayEntitlementResultsPage.default.assertHolidayEntitlementResultsPage();\n  //Assertion: Check if the page shows the expected holiday entitlement after continuing\n  _HolidayEntitlementResultsPage.default.assertExpactedHolidayEntitlement(Data.Test003ExpactedHolidays);\n});",
+              "err": {},
+              "uuid": "b58c3b9e-1a74-4673-9bd5-e11db63d7073",
+              "parentUUID": "af3d8911-8a7b-4919-ae5a-7d59fa91d24f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test004 - Calculate Holiday Entitlement for someone starting and leaving part way through a leave year",
+              "fullTitle": "Calculate Holiday Entitlement Test004 - Calculate Holiday Entitlement for someone starting and leaving part way through a leave year",
+              "timedOut": null,
+              "duration": 3420,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wrap(null).then(() => {\n  // Select irregular hours as \"No\"\n  _SelectIrregularHoursPage.default.selectRegularHours();\n  _SelectIrregularHoursPage.default.submit();\n  _HolidayEntitlementBasedOnPage.default.assertHolidayEntitlementBasedOnPage();\n  // Select '\tannualised hours'\n  _HolidayEntitlementBasedOnPage.default.selectDaysWorkPerWeek();\n  _HolidayEntitlementBasedOnPage.default.submit();\n  _SelectFullOrPartOfYearForCalculationPage.default.assertSelectFullOrPartOfYearForCalculationPage();\n  // Select the option 'ffor someone starting and leaving part way through a leave year'\n  _SelectFullOrPartOfYearForCalculationPage.default.selectStartingAndLeavingPartWayThrough();\n  _SelectFullOrPartOfYearForCalculationPage.default.submit();\n  _EmploymentStartDatePage.default.assertEmploymentStartDatePage();\n  //Enter emplyment year start date and click on 'Continue'\n  _EmploymentStartDatePage.default.enterEmploymentStartDay(Data.Test004EymplomentYearStartDay);\n  _EmploymentStartDatePage.default.enterEmploymentStartMonth(Data.Test004EmploymentYearStartMonth);\n  _EmploymentStartDatePage.default.enterEmploymentStartYear(Data.Test004EmploymentYearStartYear);\n  _EmploymentStartDatePage.default.submit();\n  _EmploymentEndDatePage.default.assertEmploymentEndDatePage();\n  // Enter emplyment end date and click on 'Continue'\n  _EmploymentEndDatePage.default.enterEmploymentEndDay(Data.Test004EymplomentEndDay);\n  _EmploymentEndDatePage.default.enterEmploymentEndMonth(Data.Test004EmploymentEndMonth);\n  _EmploymentEndDatePage.default.enterEmploymentEndYear(Data.Test004EmploymentEndYear);\n  _EmploymentEndDatePage.default.submit();\n  // Enter number of days worked per week\n  _NumberOfDaysWorkedPerWeekPage.default.enterDaysWorkedPerWeek(Data.Test004NumberOfDaysWorkedPerWeek);\n  _NumberOfDaysWorkedPerWeekPage.default.submit();\n  _HolidayEntitlementResultsPage.default.assertHolidayEntitlementResultsPage();\n  //Assertion: Check if the page shows the expected holiday entitlement after continuing\n  _HolidayEntitlementResultsPage.default.assertExpactedHolidayEntitlement(Data.Test004ExpactedHolidays);\n});",
+              "err": {},
+              "uuid": "0c708749-7908-432e-aae5-791016889145",
+              "parentUUID": "af3d8911-8a7b-4919-ae5a-7d59fa91d24f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test005 - Calculate Holiday Entitlement by entering earlier emplyment start date than leave year start date (Negative test)",
+              "fullTitle": "Calculate Holiday Entitlement Test005 - Calculate Holiday Entitlement by entering earlier emplyment start date than leave year start date (Negative test)",
+              "timedOut": null,
+              "duration": 2594,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wrap(null).then(() => {\n  // Select irregular hours as \"No\"\n  _SelectIrregularHoursPage.default.selectRegularHours();\n  _SelectIrregularHoursPage.default.submit();\n  _HolidayEntitlementBasedOnPage.default.assertHolidayEntitlementBasedOnPage();\n  // Select '\tannualised hours'\n  _HolidayEntitlementBasedOnPage.default.selectDaysWorkPerWeek();\n  _HolidayEntitlementBasedOnPage.default.submit();\n  _SelectFullOrPartOfYearForCalculationPage.default.assertSelectFullOrPartOfYearForCalculationPage();\n  // Select the option 'ffor someone starting and leaving part way through a leave year'\n  _SelectFullOrPartOfYearForCalculationPage.default.selectStartingPartWayThrough();\n  _SelectFullOrPartOfYearForCalculationPage.default.submit();\n  _EmploymentStartDatePage.default.assertEmploymentStartDatePage();\n  //Enter emplyment year start date and click on 'Continue'\n  _EmploymentStartDatePage.default.enterEmploymentStartDay(Data.Test005EymplomentYearStartDay);\n  _EmploymentStartDatePage.default.enterEmploymentStartMonth(Data.Test005EmploymentYearStartMonth);\n  _EmploymentStartDatePage.default.enterEmploymentStartYear(Data.Test005EmploymentYearStartYear);\n  _EmploymentStartDatePage.default.submit();\n  _LeaveYearStartPage.default.assertLeaveYearStartPage();\n  //Enter leave year start date and click on 'Continue'\n  _LeaveYearStartPage.default.enterleaveYearStartDay(Data.Test005LeaveYearStartDay);\n  _LeaveYearStartPage.default.enterleaveYearStartMonth(Data.Test005LeaveYearStartMonth);\n  _LeaveYearStartPage.default.enterleaveYearStartYear(Data.Test005LeaveYearStartYear);\n  _LeaveYearStartPage.default.submit();\n  //Validate error message\n  _LeaveYearStartPage.default.errorValidationWhenEarlyEmplymentStartDateThanLeaveYearStartDate(Data.Test005ErrorMessageValidation);\n});",
+              "err": {},
+              "uuid": "33867e31-f9e1-4be6-9d24-1e43a924dc1b",
+              "parentUUID": "af3d8911-8a7b-4919-ae5a-7d59fa91d24f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5fc97fd8-2741-43f1-b7f5-f660000719d9",
+            "ec36a92d-f43e-4e6c-908b-1d0cba1efe3a",
+            "b58c3b9e-1a74-4673-9bd5-e11db63d7073",
+            "0c708749-7908-432e-aae5-791016889145",
+            "33867e31-f9e1-4be6-9d24-1e43a924dc1b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16562,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
