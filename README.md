@@ -58,8 +58,11 @@ Command for run the test
 npx cypress open
 
 2.Once Cypress Test Runner is opened select ‘E2E Testing option’
+
 3.Choose a browser from the available list (e.g., Chrome) and click ‘Start E2E Testing in Chrome’ button (Specs will be selected by default)
+
 4.Click on TestSuite.cy.js (tests will start to run)
+
 5.Test Results will be available on Test Runner once completed
 
 ### Run via Terminal
